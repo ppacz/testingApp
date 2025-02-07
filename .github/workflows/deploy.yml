@@ -24,4 +24,5 @@ jobs:
             ssh-add ~/.ssh/id_ed25519 <<< "${{ secrets.SSH_PASSPHRASE }}"
             cd /home/flask/flask_project
             git pull origin master
+            sudo systemctl restart gunicorn
             ssh-agent -k
