@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             eval $(ssh-agent -s)
-            ssh-add ~/.ssh/id_rsa <<< "${{ secrets.SSH_PASSPHRASE }}"
+            ssh-add ~/.ssh/id_ed25519 <<< "${{ secrets.SSH_PASSPHRASE }}"
             cd /home/flask/flask_project
             git pull origin master
             ssh-agent -k
